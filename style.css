@@ -1,289 +1,182 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:sans-serif;
+    /* color:white; */
 }
 
-body {
-  background-color: #1e1e1e;
-  background-image: url(https://static.pexels.com/photos/8395/lights-night-unsharp-blured.jpg);
-  background-size: cover;
-  height: 100vh;
+body{
+    /* display:flex; */
+    /* justify-content: left; */
+    /* align-items:center; */
+    min-width: 100vh;
+    background-color: lightskyblue; 
+    background-image: linear-gradient(45deg, lightskyblue,lightyellow);
+    background-attachment: fixed;
+  }
 
-  font-family: "Raleway", sans-serif;
-  letter-spacing: 1px;
-}
-h1 {
-  text-align: center;
-  color: #fff;
-  padding-top: 20px;
-}
-
-ul {
-  list-style: none;
-}
-
-nav {
-  height: 40px;
-  margin: 40px auto;
-  background-color: rgba(23, 23, 50, 0.7);
-  text-align: center;
-  border-radius: 4px;
-}
-.main {
-  display: flex;
+.bannar{
+  position:relative;
+  width:100%;
   justify-content: center;
-}
-.main > li {
-  margin: 0 2%;
-}
-.main > li a{
-  border-left:1px solid rgba(23, 23, 50, 1);
-}
-a {
-  text-decoration: none;
-  color: #ffe;
-  text-transform: capitalize;
-  font-family: monospace;
-  display: block;
-  padding: 10px 15px;
-  font-size: 16px;
-  transition: background-color 0.5s ease-in-out;
-
-  font-family: "Raleway", sans-serif;
+  align-items: center;
+  color:black;
+  text-align:center;
 }
 
-a:hover {
-  background-color: #631818;
+.content{
+  position:relative;
+  display:flex;
+  flex-direction: column;
+  top:50px;
+  margin-left:300px;
+  width: calc(97% - 300px);
+  height:2000px;
+  z-index:4;
+  /* border:1px solid; */
+  transform:skewY(5deg)
 }
 
-.drop li {
-  opacity: 0;
-  transform-origin: top center;
+.content div{
+  /* border:1px solid; */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:20px;
+  margin:2em;
+  background:rgba(200,200,200,0.25);
+  height: 100vh;
+  box-shadow: 20px 20px 10px rgba(0,0,0,0.15);
 }
 
-.drop li a {
-  background-color: rgba(23, 23, 50, 0.7);
-  padding: 10px 0;
+.content div:nth-child(3) img{
+  filter:grayscale(1)
 }
 
-/*------------- menu1 animation -------------------*/
-
-.main li:hover .menu1 li:first-of-type {
-  animation: menu1 0.3s ease-in-out forwards;
-  animation-delay: 0.3s;
+.content div:nth-child(4) img{
+  width:50px;
+  height:200px;
 }
 
-.main li:hover .menu1 li:nth-of-type(2) {
-  animation: menu1 0.3s ease-in-out forwards;
-  animation-delay: 0.6s;
+.content div:nth-child(5) img:nth-child(1){
+  filter:opacity(0.02);
 }
 
-.main li:hover .menu1 li:nth-of-type(3) {
-  animation: menu1 0.3s ease-in-out forwards;
-  animation-delay: 0.9s;
+.pay{
+  height:200px;
 }
 
-.main li:hover .menu1 li:last-of-type {
-  animation: menu1 0.3s ease-in-out forwards;
-  animation-delay: 1.2s;
-}
-
-@keyframes menu1 {
-  from {
-    opacity: 0;
-    transform: translateX(30px) rotateY(90deg);
+footer{
+  width:100%;
+  display:flex;
+    justify-content:center;
+    align-items:center;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0) rotateY(0);
-  }
+ul{
+    position:fixed;
+    z-index:5;
+    float:left;
+    transform:skewY(-15deg);
+    margin-top:50px;
+    margin-left:50px;
+}
+ul li{
+    position: relative;
+    list-style: none;
+    height: 50px;
+    width: 200px;
+    padding: 15px;
+    margin: 2px;
+    background: #3e3f46;
+    z-index: calc(-1 * var(--i));
+    transition: 0.5s;
+    
+}
+ul img{height:100%;
+filter:invert()}
+
+ul li:hover{
+    background:#02abff;
+    transform:translate(40px,40px);
+    
+}
+ul li:hover a{
+    color:#fff;
+}
+ul li::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-40px;
+    width:40px;
+    height: 100%;
+    background:#494a51;
+    transform-origin:right;
+    transform:skewY(45deg);
+    filter:brightness(0.7);
+    transition:0.5s;
+    /* transform:skewY(40deg); */
+    /* transform:translate(-50px,0px) */
+}
+ul li:hover::before{
+    background:#02abff;
 }
 
-/*------------- menu2 animation -------------------*/
-
-.main li:hover .menu2 li:first-of-type {
-  animation: menu2 0.3s ease-in-out forwards;
-  animation-delay: 0.3s;
+ul li::after{
+    content:attr(data-text);
+    color:transparent;
+    position:absolute;
+    top:-40px;
+    left:0;
+    width:calc(100% - 20px);
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-left:20px;
+    font-weight:600;
+    font-size:1.5em;
+    background:#3e3f46;
+    filter:brightness(0.9);
+    transform-origin:bottom;
+    transform:skewX(45deg);
+    transition:0.5s;
 }
-
-.main li:hover .menu2 li:nth-of-type(2) {
-  animation: menu2 0.3s ease-in-out forwards;
-  animation-delay: 0.6s;
+ul li:hover::after{
+    color:white;
+    background:#02abff;
 }
-
-.main li:hover .menu2 li:nth-of-type(3) {
-  animation: menu2 0.3s ease-in-out forwards;
-  animation-delay: 0.9s;
+ul li a{
+    text-decoration: none;
+    color:#999;
+    display:block;
+    text-transform:uppercase;
+    letter-spacing: 0.05em;
+    transition:0.5s;
 }
-
-.main li:hover .menu2 li:last-of-type {
-  animation: menu2 0.3s ease-in-out forwards;
-  animation-delay: 1.2s;
+ul li a:hover{
+    /* color:#fff */
 }
-
-@keyframes menu2 {
-  0% {
-    opacity: 0;
-    transform: scale(0.7);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(1.1);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+ul li:last-child::after{
+    box-shadow: -120px 120px 20px rgba(0,0,0,0.25);
 }
-
-/*------------- menu3 animation -------------------*/
-
-.main li:hover .menu3 li:first-of-type {
-  animation: menu3 0.3s ease-in-out forwards;
-  animation-delay: 0.3s;
+ul li a span{
+    position:absolute;
+    /* top:0; */
+    left:-40px;
+    width:40px;
+    text-align:center;
+    height:50%;
+    transform-origin:right;
+    transform: skewY(45deg);
+    transition:0.5s;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.1em;
+    opacity:0.5
 }
-
-.main li:hover .menu3 li:nth-of-type(2) {
-  animation: menu3 0.3s ease-in-out forwards;
-  animation-delay: 0.6s;
-}
-
-.main li:hover .menu3 li:nth-of-type(3) {
-  animation: menu3 0.3s ease-in-out forwards;
-  animation-delay: 0.9s;
-}
-
-.main li:hover .menu3 li:last-of-type {
-  animation: menu3 0.3s ease-in-out forwards;
-  animation-delay: 1.2s;
-}
-
-@keyframes menu3 {
-  0% {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/*------------- menu4 animation -------------------*/
-
-.main li:hover .menu4 li:first-of-type {
-  animation: menu4 0.3s ease-in-out forwards;
-  animation-delay: 0.3s;
-}
-
-.main li:hover .menu4 li:nth-of-type(2) {
-  animation: menu4 0.3s ease-in-out forwards;
-  animation-delay: 0.6s;
-}
-
-.main li:hover .menu4 li:nth-of-type(3) {
-  animation: menu4 0.3s ease-in-out forwards;
-  animation-delay: 0.9s;
-}
-
-.main li:hover .menu4 li:last-of-type {
-  animation: menu4 0.3s ease-in-out forwards;
-  animation-delay: 1.2s;
-}
-
-@keyframes menu4 {
-  0% {
-    opacity: 0;
-    transform: translateX(50px) rotate(-90deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) rotate(0);
-  }
-}
-
-/*------------- menu5 animation -------------------*/
-
-.main li:hover .menu5 li:first-of-type {
-  animation: menu5 0.3s ease-in-out forwards;
-  animation-delay: 0.3s;
-}
-
-.main li:hover .menu5 li:nth-of-type(2) {
-  animation: menu5 0.3s ease-in-out forwards;
-  animation-delay: 0.6s;
-}
-
-.main li:hover .menu5 li:nth-of-type(3) {
-  animation: menu5 0.3s ease-in-out forwards;
-  animation-delay: 0.9s;
-}
-
-.main li:hover .menu5 li:last-of-type {
-  animation: menu5 0.3s ease-in-out forwards;
-  animation-delay: 1.2s;
-}
-
-@keyframes menu5 {
-  0% {
-    opacity: 0;
-    transform: rotateX(-90deg);
-  }
-  100% {
-    opacity: 1;
-    transform: rotateX(0);
-  }
-}
-
-/*------------- menu6 animation -------------------*/
-
-.main li:hover .menu6 li:first-of-type {
-  animation: menu6 0.3s ease-in-out forwards;
-  animation-delay: 0.2s;
-}
-
-.main li:hover .menu6 li:nth-of-type(2) {
-  animation: menu6 0.3s ease-in-out forwards;
-  animation-delay: 0.4s;
-}
-
-.main li:hover .menu6 li:nth-of-type(3) {
-  animation: menu6 0.3s ease-in-out forwards;
-  animation-delay: 0.6s;
-}
-
-.main li:hover .menu6 li:last-of-type {
-  animation: menu6 0.3s ease-in-out forwards;
-  animation-delay: 0.8s;
-}
-
-@keyframes menu6 {
-  0% {
-    opacity: 0;
-    transform: scale(2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* my button style */
-.white-mode {
-  text-decoration: none;
-  padding: 7px 10px;
-  background-color: #122;
-  border-radius: 3px;
-  color: #fff;
-  transition: 0.35s ease-in-out;
-  position: absolute;
-  left: 15px;
-  bottom: 15px;
-  font-family: sans-serif;
-}
-
-.white-mode:hover {
-  background-color: #fff;
-  color: #122;
+ul li:hover a span{
+    opacity:1
 }
