@@ -1,41 +1,264 @@
 <!DOCTYPE html>
-<html lang="en" >
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Quick Moe</title>
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  
-  
-      <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mentor Hub: Smart Learning at Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: black;
+            font-size: 2em;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333;
+            color: white;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            height: 50px;
+        }
+        header h1 {
+            margin-left: 20px;
+            font-size: 1em;
 
-  
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-right: 20px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.5em;
+        }
+        .hero, .feature, .full-page-section {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            color: black;
+        }
+        .hero {
+            background: url('main_1.webp') no-repeat center center/cover;
+            position: relative;
+top:30px;
+        }
+        .hero h2, .hero p,#about p {
+            margin: 15px 0;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 10px;
+            border-radius: 10px;
+width:50%;
+        }
+        .hero button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+	    border-radius:10px;
+            background: #ff5722;
+            color: white;
+            cursor: pointer;
+            margin: 5px;
+        }
+#features h2, #about h2{
+  font-weight: bold; /* Make the text bold */
+  text-shadow: 2px 2px 4px white; /* Add a white shadow */
+  color: black; /* Set the text color (optional, adjust as needed) */
+
+}
+.contact_line{
+display:flex;
+}
+        .feature {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .feature.visible {
+            opacity: 1;
+        }
+        .full-page-section {
+            background-size: cover;
+            background-position: center;
+        }
+        footer {
+            text-align: center;
+            padding: 5px;
+            background: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+	    font-size : 0.51em;
+        }
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+font-size:0.5em;
+padding:20px;
+border-radius:10px;
+background-color:rgba(150,150,150,0.5)
+        }
+
+        #contact form label,
+        #contact form input,
+        #contact form textarea,
+        #contact form button {
+            width: 80%;
+-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+            margin: 5px 0;
+	
+        }
+#contact form textarea{
+resize:none;
+height:5em;
+/*overflow-y: overlay;*/
+
+}
+	#contact form #submit{
+           width:50%;
+	    padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+	    border-radius:10px;
+            cursor: pointer;
+            margin: 5px;
+}
+.to-top-button {
+user-select: none;
+/*pointer-events: none;*/
+  position: fixed; /* Fixed position */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  padding: 10px 15px; /* Padding for the button */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  text-decoration: none; /* Remove underline */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); /* Add a shadow */
+z-index:1000;
+}
+
+.to-top-button:hover {
+  background-color: #0056b3; /* Darker background on hover */
+}
+    </style>
 </head>
-
 <body>
-  <div class="bannar" id="top"><h1>广告位招租</h1></div>
-
-<nav>
-  <ul>
-    <li style="--i:1" data-text="Home" ><a href="#top"><span><img src="icons/flat-home2.png" /></span>Home</a></li>
-    <li style="--i:2" data-text="" ><a href="#first"><span><img src="icons/flat-megaphone.png"/></span>News</a></li>
-    <li style="--i:3" data-text="" ><a href="#second"><span><img src="icons/flat-box.png"/></span>Products</a></li>
-    <li style="--i:4" data-text="" ><a href="#third"><span><img src="icons/flat-user.png"/></span>User Center</a></li>
-    <li style="--i:5" data-text="" ><a href="#last"><span><img src="icons/flat-contact-us.png"/></span>Contact</a></li>
-</ul>
-</nav>
-<div class="content">
-  <div style="--j:1" id=""><img src="0002.jpg" /><span>Senior Programmer</span></div>
-  <div style="--j:2" id="first"><audio
-    src="Cras numquam scire.mp3"
-    autoplay="autoplay" controls="controls" loop="loop" preload="auto" id="music" /></div>
-  <div style="--j:3" id="second"><img src="0002.jpg" /><span>Faded Programmer</span></div>
-  <div style="--j:4" id="third"><img src="0002.jpg" /><span>Slim Programmer</span></div>
-  <div style="--j:5" id="last"><img src="0002.jpg" /><span>Fleeing Programmer</span><img class="pay" src="pay.jpg" /></div>
-  <footer ><p>&copy; 2024</p>
-</footer>
-</div>
-
-
+    <header>
+        <h1>AI Mentor Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="MentorHub.apk">Download</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <h2>Personalized Learning for Every Household</h2>
+        <p>Enhance education at home with AI-driven personalized learning solutions.</p>
+        <button onclick="learnMore()">Learn More</button>
+        <button onclick="tryNow()">Try Now</button>
+    </section>
+    
+    <section id="features">
+        <div class="feature" style="background-image: url('adaptive_learning.webp');">
+            <h2>AI-Powered Adaptive Learning</h2>
+        </div>
+        <div class="feature" style="background-image: url('learning_tracking.webp');">
+            <h2>Real-time Progress Tracking</h2>
+        </div>
+        <div class="feature" style="background-image: url('smart_device.webp');">
+            <h2>Interactive Smart Devices</h2>
+        </div>
+        <div class="feature" style="background-image: url('parent_control.webp');">
+            <h2>Parental Control & Monitoring</h2>
+        </div>
+    </section>
+    
+    <section id="about" class="full-page-section" style="background-image: url('about_us.webp');">
+        <h2>About Us</h2>
+        <p>We leverage artificial intelligence to create tailored learning experiences for every child.</p>
+	<div><div style="border-radius:10px;overflow:hidden;background-image:url('ceo.jpg');background-size:contain;background-position:center;;background-repeat:no-repeat; width:70px; height:100px"></div><h2 style="font-size:0.5em;">CEO</h2></div>
+    </section>
+    
+    <section id="contact" class="full-page-section" style="background-image: url('contact_us.webp');">
+        <h2>Contact Us</h2>
+        <form>
+<div class="contact_line">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+   </div>
+<div class="contact_line">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+               </div>
+<div class="contact_line">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+               </div>
+            <button id="submit" type="submit">Send</button>
+        </form>
+    </section>
+    <a href="#home" class="to-top-button">↑</a>
+    <footer>
+        <p>&copy; 2025 AI Mentor Hub. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function learnMore() {
+            document.querySelector('#features').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function tryNow() {
+window. open("MentorHub.apk",  '_blank')
+            //alert("Try Now feature coming soon!");
+        }
+        
+        document.addEventListener("scroll", function() {
+            const features = document.querySelectorAll(".feature");
+            const scrollPosition = window.scrollY + window.innerHeight;
+            
+            features.forEach(feature => {
+                if (feature.offsetTop < scrollPosition) {
+                    feature.classList.add("visible");
+                }
+            });
+        });
+        
+        let heroImages = ['main_1.webp', 'main_2.webp', 'main_3.webp'];
+        let currentImageIndex = 0;
+        function changeHeroImage() {
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+            document.querySelector('.hero').style.backgroundImage = `url(${heroImages[currentImageIndex]})`;
+        }
+        setInterval(changeHeroImage, 10000);
+    </script>
 </body>
 </html>
